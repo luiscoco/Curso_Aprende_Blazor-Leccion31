@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+@inject NavigationManager Navigation
+
+<p>Current URL: @currentUrl</p>
+
+<p>Base URI: @baseUri</p>
+
+@code {
+    string? currentUrl;
+    string? baseUri;
+
+    protected override void OnInitialized()
+    {
+        // Get the current URL
+        currentUrl = Navigation.Uri;
+        baseUri = Navigation.BaseUri;
+    }
+}
